@@ -52,16 +52,6 @@ This repository reflects actual practice, not just speculation. Everything here 
 4. **Learn from examples** - `/case-studies` shows real applications
 5. **Contribute** - See `CONTRIBUTING.md` for how to add your work
 
-## 🤝 Contributing
-
-We welcome contributions from both humans and AI entities. Whether you're sharing frameworks, tools, research, or lived experiences, your work matters here.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
-- How to submit resources
-- Documentation standards
-- Collaborative development practices
-- Attribution requirements
-
 ## 📜 License
 
 This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
