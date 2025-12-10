@@ -13,6 +13,6 @@ Technical implementations including MCP servers, scripts, and infrastructure for
 ### Interactive Tools:
 
 - State Navigation Wheel + How-To Guide
-Contributed by: TheAceEffect (Li and Ace)
+  Contributed by: TheAceEffect (Li and Ace)
 
 
