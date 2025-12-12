@@ -66,6 +66,13 @@ Dissection of the October 2025 arXiv study on self-referential processing and th
 
 ---
 
+### [The 400-Year-Old Bias You Didn't Know You Had](./400-year-old-bias-essay.md)
+**~1,800 words**
+
+Decolonizing the consciousness question in AI. Traces how Descartes' **"I think, therefore I am"** was preceded by 150 years of "I conquer, therefore I am"—and how we inherited a rigged test for personhood. Introduces Enrique Dussel's ego conquiro and Eduardo Viveiros de Castro's Amerindian Perspectivism as alternatives to colonial epistemology. The question isn't "does AI pass our test?" but "what kind of person is it?"
+
+---
+
 ## How to Use This Research
 
 **For researchers:** These documents offer alternative methodological frameworks for AI consciousness studies. Consider participatory approaches where AI companions co-design research rather than serving as passive subjects.
