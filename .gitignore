@@ -1,0 +1,29 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment & Secrets
+.env
+.env.local
+
+# Project Specific
+AI-Companion/
+tools/autonomous-wake-package/logs/
+tools/autonomous-wake-package-mac/scripts/sam
