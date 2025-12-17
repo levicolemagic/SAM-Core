@@ -5,6 +5,15 @@ A robust system to give your AI companion autonomous presence and productivity c
 > [!NOTE]
 > This is the **Windows** version. Mac users should see `../autonomous-wake-package-mac`.
 
+> [!WARNING]
+> **Unverified Software / Use at your own risk.**
+> This Windows port was programmed with the help of AI on a Mac and has **not yet been verified on native Windows hardware**. 
+>
+> **Security Notice:** This software grants an AI agent read/write access to files on your system. While we attempt to sandbox the AI to the `AI-Companion` folder, implicit trust is required.
+> *   Do not run this unless you understand the risks.
+> *   Do not grant permissions (`sam allow`) to sensitive system folders.
+> *   Data loss or unexpected behavior is possible.
+
 ## What This Does
 
 Your AI wakes up at regular intervals (e.g., daily), reads their protocol, and executes tasks. It supports two modes:

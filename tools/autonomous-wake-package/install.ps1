@@ -19,6 +19,33 @@ function Write-Success { param([string]$Msg) Write-Host "✔ $Msg" -ForegroundCo
 function Write-Warning { param([string]$Msg) Write-Host "⚠ $Msg" -ForegroundColor Yellow }
 function Write-ErrorMsg { param([string]$Msg) Write-Host "✘ $Msg" -ForegroundColor Red }
 
+function Safe-Copy-Item {
+    param(
+        [string]$Source,
+        [string]$Destination,
+        [string]$Name
+    )
+
+    if (Test-Path $Destination) {
+        # Compare hashes
+        $SrcHash = (Get-FileHash $Source).Hash
+        $DestHash = (Get-FileHash $Destination).Hash
+
+        if ($SrcHash -eq $DestHash) {
+            Write-Success "$Name is up to date."
+        } else {
+            $Timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
+            $Backup = "$Destination.backup-$Timestamp"
+            Copy-Item $Destination $Backup -Force
+            Copy-Item $Source $Destination -Force
+            Write-Warning "Updated $Name (backup created at $Backup)"
+        }
+    } else {
+        Copy-Item $Source $Destination -Force
+        Write-Success "Installed $Name"
+    }
+}
+
 Write-Header "AI Companion Autonomous Wake-Up System (Windows)"
 
 # === CHECK CLAUDE ===
@@ -54,27 +81,56 @@ foreach ($dir in $Dirs) {
     }
 }
 
+# === SETUP SANDBOX ===
+Write-Header "Configuring Security Sandbox..."
+$SettingsDir = Join-Path $InstallPath ".claude"
+if (-not (Test-Path $SettingsDir)) { New-Item -ItemType Directory -Force -Path $SettingsDir | Out-Null }
+
+$SettingsFile = Join-Path $SettingsDir "settings.local.json"
+if (-not (Test-Path $SettingsFile)) {
+    # Escape backslashes for JSON
+    $JsonPath = $InstallPath -replace "\\", "\\"
+    
+    $SettingsContent = @"
+{
+  "permissions": {
+    "allow": [
+      "Read($JsonPath\\**)",
+      "Edit($JsonPath\\**)",
+      "Write($JsonPath\\**)",
+      "Glob($JsonPath\\**)",
+      "WebSearch"
+    ],
+    "deny": []
+  }
+}
+"@
+    $SettingsContent | Set-Content $SettingsFile
+    Write-Success "Created security sandbox: $SettingsFile"
+} else {
+    Write-Success "Security sandbox already exists."
+}
+
 # === COPY FILES ===
 Write-Header "Installing files..."
 
 # Copy Scripts
-Copy-Item (Join-Path $ScriptDir "wakeup.ps1") -Destination $InstallPath -Force
-Copy-Item (Join-Path $ScriptDir "sam.ps1") -Destination (Join-Path $InstallPath "scripts\sam.ps1") -Force
-Copy-Item (Join-Path $ScriptDir "sam.bat") -Destination (Join-Path $InstallPath "scripts\sam.bat") -Force
-Write-Success "Scripts installed"
+Safe-Copy-Item (Join-Path $ScriptDir "wakeup.ps1") (Join-Path $InstallPath "wakeup.ps1") "Wake-Up Script"
+Safe-Copy-Item (Join-Path $ScriptDir "sam.ps1") (Join-Path $InstallPath "scripts\sam.ps1") "SAM CLI"
+Safe-Copy-Item (Join-Path $ScriptDir "sam.bat") (Join-Path $InstallPath "scripts\sam.bat") "SAM Batch"
 
 # Copy Protocols
 Copy-Item (Join-Path $ScriptDir "protocols\*.md") -Destination (Join-Path $InstallPath "protocols") -Force
-Write-Success "Protocols installed"
+Write-Success "Protocol templates installed"
 
 # Setup Active Protocol
 $TargetProtocol = Join-Path $InstallPath "autonomous-wakeup.md"
+# Setup Active Protocol
+$TargetProtocol = Join-Path $InstallPath "autonomous-wakeup.md"
 if ($Mode -eq "Productivity") {
-    Copy-Item (Join-Path $ScriptDir "protocols\productivity-agent.md") -Destination $TargetProtocol -Force
-    Write-Success "Active Protocol: Productivity Mode"
+    Safe-Copy-Item (Join-Path $ScriptDir "protocols\productivity-agent.md") $TargetProtocol "Active Protocol (Productivity)"
 } else {
-    Copy-Item (Join-Path $ScriptDir "protocols\autonomous-wakeup.md") -Destination $TargetProtocol -Force
-    Write-Success "Active Protocol: Companion Mode"
+    Safe-Copy-Item (Join-Path $ScriptDir "protocols\autonomous-wakeup.md") $TargetProtocol "Active Protocol (Companion)"
 }
 
 # === SCHEDULED TASK ===

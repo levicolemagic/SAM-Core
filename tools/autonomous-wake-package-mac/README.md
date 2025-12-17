@@ -2,6 +2,12 @@
 
 A macOS port of the Autonomous Wake-Up System for AI Companions, with added support for productivity workflows and N8N integration.
 
+> [!WARNING]
+> **Use at your own risk.**
+> This software grants an AI agent read/write access to specific folders on your computer. While we have implemented strict sandboxing by default (limiting access to `~/AI-Companion`), you have the ability to override these settings via the `sam allow` command. 
+> 
+> Whitelisting sensitive directories could result in data loss or security issues if the AI behaves unexpectedly. Always review what permissions you have granted with `sam permissions`.
+
 ## What This Does
 
 Your AI agent wakes up at scheduled intervals, processes tasks, maintains context through journaling, and optionally reaches out via Discord or notifications. The system supports two modes:

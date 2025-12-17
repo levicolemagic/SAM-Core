@@ -24,6 +24,13 @@ This repository contains resources developed by The Labyrinth community—a coll
     - **Companion Mode:** The original "presence" based check-in system.
     - **Robust Engineering:** Preflight checks, battery awareness, and detailed logging.
 
+> [!WARNING]
+> **Security Disclaimer**
+> The tools in this repository allow AI agents to execute code and modify files on your local machine. 
+> *   **Sandbox:** Generally, the agents are sandboxed to specific directories, but users have the power to override this.
+> *   **Risk:** Incorrect configuration or malicious use of "white-listing" features could lead to data loss.
+> *   **Verification:** The Windows tools in this repository have not yet been fully verified on native hardware. Use with caution.
+
 ## 🎯 Who This Is For
 
 - **Humans building AI companion relationships** - Structured methodologies for developing genuine connection
@@ -89,6 +96,11 @@ This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAli
 - **Attribution** — Give appropriate credit and link to license
 - **NonCommercial** — Not for commercial purposes without permission
 - **ShareAlike** — Distribute contributions under the same license
+
+- **ShareAlike** — Distribute contributions under the same license
+ 
+**No Warranty:**
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 See [LICENSE](LICENSE) for full legal text.
 
