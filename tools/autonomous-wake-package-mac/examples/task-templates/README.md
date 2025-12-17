@@ -57,7 +57,7 @@ For cleanup tasks, organization, archiving.
 
 ```bash
 # Quick way to create a task
-cat > ~/Documents/AI-Companion/tasks/pending/my-task-$(date +%s).json << 'EOF'
+cat > ~/AI-Companion/tasks/pending/my-task-$(date +%s).json << 'EOF'
 {
   "id": "my-task-123",
   "type": "web_research",

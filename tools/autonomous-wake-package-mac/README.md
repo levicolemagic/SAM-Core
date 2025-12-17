@@ -178,7 +178,7 @@ The `sam` command lets you quickly create tasks from your terminal:
 
 ```bash
 # Add sam to your PATH (add to ~/.zshrc for permanent)
-export PATH="$PATH:$HOME/Documents/AI-Companion/scripts"
+export PATH="$PATH:$HOME/AI-Companion/scripts"
 
 # Create a task
 sam "research electric RV charging infrastructure"

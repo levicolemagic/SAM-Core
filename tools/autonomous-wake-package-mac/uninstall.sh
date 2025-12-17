@@ -117,7 +117,7 @@ main() {
             echo "Removing data folder..."
 
             # Create a backup first
-            local backup_path="$HOME/Documents/AI-Companion-backup-$(date +%Y%m%d-%H%M%S)"
+            local backup_path="$HOME/AI-Companion-backup-$(date +%Y%m%d-%H%M%S)"
             cp -r "$DEFAULT_PROJECT_PATH" "$backup_path"
             print_success "Created backup at: $backup_path"
 

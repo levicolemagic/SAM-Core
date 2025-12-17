@@ -86,8 +86,8 @@ return [{
 Update these paths in each workflow to match your setup:
 
 ```
-/Users/YOUR_USERNAME/Documents/AI-Companion/tasks/pending/
-/Users/YOUR_USERNAME/Documents/AI-Companion/context/
+/Users/YOUR_USERNAME/AI-Companion/tasks/pending/
+/Users/YOUR_USERNAME/AI-Companion/context/
 ```
 
 Or use environment variables in N8N for cleaner configuration.

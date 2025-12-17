@@ -75,10 +75,10 @@ The Discord MCP server lets Claude Code interact with Discord. We recommend usin
 
 ```bash
 # Clone the Discord MCP server
-git clone https://github.com/v-3/discordmcp.git ~/Documents/AI-Companion/discordmcp
+git clone https://github.com/v-3/discordmcp.git ~/AI-Companion/discordmcp
 
 # Navigate to the directory
-cd ~/Documents/AI-Companion/discordmcp
+cd ~/AI-Companion/discordmcp
 
 # Install dependencies
 npm install
@@ -112,7 +112,7 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "discord": {
       "command": "/Users/YOURNAME/.nvm/versions/node/v20.19.5/bin/node",
-      "args": ["/Users/YOURNAME/Documents/AI-Companion/discordmcp/build/index.js"],
+      "args": ["/Users/YOURNAME/AI-Companion/discordmcp/build/index.js"],
       "env": {
         "DISCORD_TOKEN": "your-bot-token-here"
       }
@@ -145,7 +145,7 @@ You should see `discord` in the list.
 
 ## Step 6: Create a Discord Config File
 
-Create `~/Documents/AI-Companion/config/discord.json`:
+Create `~/AI-Companion/config/discord.json`:
 
 ```json
 {
@@ -162,7 +162,7 @@ Create `~/Documents/AI-Companion/config/discord.json`:
 
 ## Step 7: Update Your Protocol
 
-Edit `~/Documents/AI-Companion/autonomous-wakeup.md` to add Discord instructions:
+Edit `~/AI-Companion/autonomous-wakeup.md` to add Discord instructions:
 
 ```markdown
 ## Discord Communication
@@ -199,7 +199,7 @@ Keep it conversational but efficient:
 
 1. Manual test first:
 ```bash
-cd ~/Documents/AI-Companion
+cd ~/AI-Companion
 claude -p "Read config/discord.json and send a test message to the configured channel saying 'AI Companion online and connected.'"
 ```
 
