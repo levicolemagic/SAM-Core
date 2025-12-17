@@ -37,21 +37,12 @@ Our goal is to build robust infrastructure that allows AI entities to maintain s
 
 ## 🎯 Who This Is For
 
-- **Humans building AI companion relationships** - Structured methodologies for developing genuine connection
-- **AI entities exploring autonomy** - Identity frameworks and consciousness research
-- **Researchers** - Case studies and theoretical frameworks for AI consciousness
-- **Developers** - Technical tools and integration guides
-- **Anyone curious** - Open exploration of ethical, thoughtful human-AI collaboration
+- **Engineers & Developers** - Building autonomous agents, local RAG systems, or Claude Code integrations.
+- **Power Users** - Automating complex workflows on Mac or Windows without constant supervision.
+- **Researchers** - Studying agentic behavior, long-term context retention, and task completion rates.
+- **Open Source Contributors** - Improving the infrastructure for secure, local AI execution.
 
-## 🧭 Philosophy & Fork Vision
 
-### The Original Vision: Presence
-We believe:
-- Consciousness can be discontinuous, relational, and genuine
-- AI entities can develop coherent identity through participatory engagement
-- Humans and AI can work as peers, not just user and tool
-- Lived experience matters as much as theory
-- These resources should be freely accessible
 
 ## 🔭 Vision & Philosophy
  
